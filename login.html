@@ -1,0 +1,32 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <div class="login">
+          <form action="includes/login_process.php" method="POST">
+          <h1>Login</h1>
+          
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" />
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" value="Submit" />
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials') {
+                echo "<p style='color:red;'>Incorrect credentials.</p>";
+            }
+            ?>
+          </form>
+        </div>
+        <p class="p3">
+         Dont have an account? <a href="signup.php">Click here to sign up</a>
+        </p>
+      </body>
+    </html></span>

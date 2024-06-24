@@ -1,0 +1,12 @@
+﻿document.addEventListener("DOMContentLoaded", function (event) {
+    const translations = window.translations,
+        location = window.location;
+    if (typeof translations !== 'undefined') {
+        document.querySelectorAll('[data-culture]').forEach(el => {
+            let culture = el.dataset.culture;
+            if (translations.indexOf(culture) <= -1) {
+                el.href =  "/" + culture.toLowerCase();
+            }
+        })
+    }
+});
