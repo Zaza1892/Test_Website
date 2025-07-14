@@ -8,7 +8,7 @@ ini_set('error_log', '/path/to/error.log');
 try {
     require_once 'includes/dbh.inc.php';
     session_start();
-
+ 
     
 
     $data = json_decode(file_get_contents('php://input'), true);
