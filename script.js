@@ -11,7 +11,7 @@
         document.querySelector('.signup-form-container').classList.toggle('active');
     });
    
-
+ 
 
 let searchForm = document.querySelector('.search-form');
 document.querySelector('#search-btn').onclick = () => {
