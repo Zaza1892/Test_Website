@@ -5,7 +5,7 @@ require_once "dbh.inc.php";
 // get items from sql 
 $stmt = $pdo->query("SELECT * FROM products");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+ 
 // Add to cart
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["product_id"])) {
     $product_id = $_POST["product_id"];
