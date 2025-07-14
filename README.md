@@ -11,6 +11,6 @@ The site connects to a mySQL database  to display products dynamically on the ho
 -Product display  from a MySQL database
 -Responsive layout (mobile-friendly)
 -Built with  HTML , CSS, JavaScript, and PHP
-- SQL database integration for storing product data
-- Clean homepage with product listings and categories
+-SQL database integration for storing product data
+-Clean homepage with product listings and categories
 
