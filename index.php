@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "includes/dbh.inc.php";
-
+ 
 // Initialize $cartItems as an empty array
 $cartItems = [];
 
