@@ -6,49 +6,7 @@ require_once "dbh.inc.php";
 $stmt = $pdo->query("SELECT * FROM products");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
  
-// Add to cart
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["product_id"])) {
-    $product_id = $_POST["product_id"];
-    $product = null;
 
-    // find product 
-    foreach ($products as $prod) {
-        if ($prod['prodId'] == $product_id) {
-            $product = $prod;
-            break;
-        }
-    }
-
-    // add to cart when found 
-    if ($product) {
-        $cart_item = [
-            "id" => $product["prodId"],
-            "prodName" => $product["prodName"],
-            "price" => $product["price"],
-            "quantity" => 1,
-            "image" => $product["image"]
-        ];
-
-        if (isset($_SESSION["cart"])) {
-            $is_in_cart = false;
-
-            //check if in cart 
-            foreach ($_SESSION["cart"] as &$item) {
-                if ($item["id"] == $product["prodId"]) {
-                    $item["quantity"]++;
-                    $is_in_cart = true;
-                    break;
-                }
-            }
-
-            // add if empty
-            if (!$is_in_cart) {
-                $_SESSION["cart"][] = $cart_item;
-            }
-        } else {
-            // empty
-            $_SESSION["cart"] = [$cart_item];
-        }
     }
 }
 ?>
