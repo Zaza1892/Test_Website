@@ -4,6 +4,8 @@ A responsive e-commerce website built using HTML, CSS, JavaScript, PHP, and MySQ
 
 The site connects to a mySQL database  to display products dynamically on the homepage. The  "Add to Cart" functionality is not yet fully implemented, but the core structure for an online store is in place.
 
+I am slowly trying to fix small mistakes i have overlooked in the past. To make it run without issue
+
 ---
 
 # Features
