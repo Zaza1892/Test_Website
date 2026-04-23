@@ -26,7 +26,7 @@ if (isset($_SESSION['userId'])) {
 
         $stmt->execute(['cartId' => $cart['cartId']]);
         $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    
 }
 ?>
 
