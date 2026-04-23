@@ -5,11 +5,32 @@ require_once "dbh.inc.php";
 // get items from sql 
 $stmt = $pdo->query("SELECT * FROM products");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
- 
 
+
+$cartItems = [];
+
+if (isset($_SESSION['userId'])) {
+    $userId = $_SESSION['userId'];
+
+    $stmt = $pdo->prepare("SELECT cartId FROM cart WHERE id = :userId");
+    $stmt->execute(['userId' => $userId]);
+    $cart = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($cart) {
+        $stmt = $pdo->prepare("
+            SELECT p.id, p.prodName, p.price, p.image, ci.quantity 
+            FROM cart_items ci
+            JOIN products p ON ci.id = p.id
+            WHERE ci.cartId = :cartId
+        ");
+
+        $stmt->execute(['cartId' => $cart['cartId']]);
+        $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
