@@ -43,20 +43,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <label for="search-box" class="fas fa-search"></label>
             </div>
         </div>
-        <div class="cart-items-container">
-            <?php if (isset($_SESSION["cart"])): ?>
-                <?php foreach ($_SESSION["cart"] as $item): ?>
-                    <div class="cart-items">
-                        <span class="fas fa-times"></span>
-                        <img src="<?php echo $item['image']; ?>" alt="">
-                        <div class="content">
-                            <h3><?php echo $item['prodName']; ?></h3>
-                            <div class="price">R<?php echo $item['price']; ?></div>
-                            <div class="quantity">Quantity: <?php echo $item['quantity']; ?></div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+        
             <a href="checkout.php" class="btn">Checkout</a>
         </div>
     </header>
