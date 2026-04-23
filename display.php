@@ -86,7 +86,9 @@ if (isset($_SESSION['userId'])) {
                     </div>
                     <h3><?php echo $product['prodName']; ?></h3>
                     <div class="price">R<?php echo $product['price']; ?></div>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <button class="btn add-to-cart" data-id="<?php echo $product['prodId']; ?>">
+                            Add to Cart
+                    </button>
                 </div>
             <?php endforeach; ?>
         </div>
